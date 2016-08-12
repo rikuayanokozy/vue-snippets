@@ -1,0 +1,38 @@
+.left {
+  float: left;
+}
+a {
+  text-decoration: none;
+}
+a.btn, a.btn:visited {
+  color: #777;
+}
+.btn {
+  display: inline-block;
+  padding: 0 15px;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 30px;
+  height: 30px;
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+  background: #fff;
+  letter-spacing: 1px;
+}
+.btn:hover {
+  background: #f7f7f7;
+}
+a.btn-primary, a.btn-primary:visited {
+  color: #fff;
+}
+.btn-primary {
+  background: #67adff;
+  border: 1px solid #67adff;
+}
+.btn-primary:hover {
+  background: #8bc1ff;
+  border-color: #8bc1ff;
+}
+.btn.left {
+  margin-left: 0;
+}
