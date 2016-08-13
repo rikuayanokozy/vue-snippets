@@ -20,18 +20,33 @@
       <a href="#" class="btn" @click.prevent="showDialog2=false">Close</a>
     </div>
   </dialog>
+  <hr>
+  <h4>Alert (bootstrap style)</h4>
+  <alert type="error" title="Error">this is an error alert</alert>
+  <alert type="warning" title="Warning">this is a warning alert</alert>
+  <alert :type="alertType" title="Dynamic alert">
+    select type:
+    <select v-model="alertType">
+      <option>Default (info)</option>
+      <option value="error">Error</option>
+      <option value="warning">Warning</option>
+      <option value="success">Success</option>
+  </alert>
 </template>
 <script>
 import CountdownButton from './components/countdown-btn';
 import Dialog from './components/dialog';
+import Alert from './components/Alert';
 
 export default {
   data: () => ({
     countDownBtnStatus: 'available',
     showDialog1: false,
     showDialog2: false,
+    alertType: 'Default (info)',
   }),
   components: {
+    Alert,
     Dialog,
     'countdown-btn': CountdownButton,
   },
