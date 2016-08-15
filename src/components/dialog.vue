@@ -1,5 +1,5 @@
 <template>
-  <div class="dialog-backdrop" v-if="show" @click="show=false">
+  <div class="dialog-backdrop" v-if="show" @click="show=false" @keypress.27="show=false">
     <div class="dialog" @click.stop>
       <div class="dialog-title">
         <span class="dialog-close-button" @click="show=false" v-if="closeBtn">&times;</span>
@@ -28,6 +28,20 @@ export default {
     closeBtn: {
       type: Boolean,
       default: true,
+    },
+  },
+  watch: {
+    show(next) {
+      const escHandler = e => {
+        if (e.keyCode === 27) {
+          this.$set('show', false);
+        }
+      };
+      if (next) {
+        document.body.addEventListener('keydown', escHandler);
+      } else {
+        document.body.removeEventListener('keydown', escHandler);
+      }
     },
   },
 };
